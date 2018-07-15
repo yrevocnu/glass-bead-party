@@ -15,6 +15,12 @@
     <a-mixin id="members"
              position="0 2.1 0"></a-mixin>
 
+    <a-mixin id="score"
+             position="0 7 0"
+             width="7"
+             wrap-count="2"
+             align="center">
+
     <!-- Texture samples -->
     <img id="sand" crossorigin="anonymous" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8yk8DfEK3_p00rFA6v0HmoRRBUnofgIJkIe5ABarDJqJF3V3_">
     <img id="glass" crossorigin="anonymous" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXhbpfWPwlvkCP7xAgq00gumbFRQ6q-eUNH4a9LUrIXs--J7ac">
@@ -55,6 +61,7 @@
 
       <a-text mixin="title" value="ReefStructure" align="center"></a-text>
       <a-text mixin="members" value="Sebastian Benthall, Commander" align="center"></a-text>
+      <a-text mixin="score" color="magenta" value="30" ></a-text>
     </a-entity>
   </a-entity>
 
@@ -68,7 +75,7 @@
          repeat="indefinite"></a-animation></a-torus-knot>
       <a-text mixin="title" value="FruitsParadise" align="center"></a-text>
       <a-text mixin="members" value="Madoka Wada, Symbol" align="center"></a-text>
-      <a-text position="0 7 0" width="8" wrapcount="1" color="gold" value="3" align="center"></a-text>
+      <a-text mixin="score" color="gold" value="3" ></a-text>
     </a-entity>
   </a-entity>
 
