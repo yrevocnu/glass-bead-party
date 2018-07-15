@@ -1,0 +1,22 @@
+<a-entity position="0 0 0">
+
+  {% for x in range(20) %}
+    {% for y in range(20) %}
+    <a-entity rotation="0  {{9 * x}} 0">
+       <a-plane position="0 {{y + 2}} -5"
+                side="double"
+                rotation="0 0 0"
+                width="1"
+                height="1" shadow>
+         <a-animation attribute="color"
+           direction="alternate-reverse"
+           dur="{{(x + 1) * (y + 1) * 150}}"
+           from="#FF0000"
+           to="#0000FF"
+           repeat="indefinite"></a-animation>
+       </a-plane>
+    <a-entity>   
+    {% endfor %}
+  {% endfor %}
+        
+</a-entity>
