@@ -39,7 +39,7 @@
   <a-sky src="#stars"></a-sky>
   <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"></a-plane>
 
-  <a-entity gltf-model="#passion_ball" position="0 3 0"></a-entity>
+  
   <!-- The Glass Bead -->
   <!-- Note: color of material and color of light are completely independent -->
   <a-sphere position="0 3 0"
@@ -69,7 +69,12 @@
       {% include "brillish.njk" %}
     </a-entity>
   </a-entity>
-
+<a-entity gltf-model="#passion_ball" position="0 5 0" scale=".03 .03 .03">
+  <a-animation attribute="rotation" dur="4000"
+         fill="forwards"
+         to="0 180 0"
+         repeat="indefinite"></a-animation>
+</a-entity>
   <!-- フルーツ　Paradise - note, A-Frame is racist, so doesn't handle utf-8 by default -->
   <a-entity rotation="0 -120 0">
     <a-entity position="0 0 -10">
