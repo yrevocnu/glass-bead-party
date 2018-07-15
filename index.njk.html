@@ -21,13 +21,14 @@
              position="0 7 0"
              width="7"
              wrap-count="2"
-             align="center">
+             align="center"></a-mixin>
 
     <!-- Texture samples -->
     <img id="sand" crossorigin="anonymous" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8yk8DfEK3_p00rFA6v0HmoRRBUnofgIJkIe5ABarDJqJF3V3_">
     <img id="glass" crossorigin="anonymous" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXhbpfWPwlvkCP7xAgq00gumbFRQ6q-eUNH4a9LUrIXs--J7ac">
     <img id="rust" crossorigin="anonymous" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeeEo19vWWDeLx2o9a0ypIUv4qvpDAWcRa_AAo3UI2-nF_2Nus">
     <img id="leaves" crossorigin="anonymous" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFECvldc9ayjqk6jZUFhHyLyhNJFXlp9Y7Fb6EuqTjw5BJE5J8KQ">
+    <img id="branches" src="branches_green.jpg">
     <img id="mix" crossorigin="anonymous" src="https://us.v-cdn.net/5021068/uploads/editor/f0/6kymf4lg6ium.jpg">
     <img id="coral" src="coral.png">
 
@@ -52,7 +53,7 @@
     <a-camera></a-camera>
   </a-entity>
 
-  {% include "the-woods.njk" %}
+  {% include "the-woods.njk.html" %}
 
   <!-- Reef Corps -->
   <a-entity rotation="0 120 0">
