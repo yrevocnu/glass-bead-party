@@ -6,6 +6,22 @@
     <meta name="description" content="Glass Bead Labs Planning Party - Houses / Metaverse">
     <!-- TODO change this to an npm managed dependency for easier offline development -->
     <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-state-component@^3.0.0/dist/aframe-state-component.min.js"></script> 
+    <script src="https://unpkg.com/nunjucks@3.1.3/browser/nunjucks.js"></script>
+    <script>
+      AFRAME.registerState({
+        initialState: {
+          points: {FruitsParadise: 3, TheWoods: 0, ReefStructure: 0}
+        },
+ 
+        handlers: {
+          pointUpdate: function (state, action) {
+            // Not sure if we are able to just update attributes...
+            state.points = action.newPoints;
+          }
+        },
+      });
+    </script> 
     <!-- style>
       #a-frame-container {
         height: 750px;
@@ -14,74 +30,8 @@
     </style -->
   </head>
   <body>
-    <a-scene id="a-frame-container" inspector>
-      <a-assets>
-        <!-- question: can we programmatically update a mixin and trigger updates on the compoenents that use it? -->
-        <a-mixin id="house"
-                 material="transparent: true; opacity: 0.9;"
-                 light="distance: 120; intensity: 1; type: point"
-                 shadow></a-mixin>
-        <!-- elements with this mixin still need to specify light color and other geometry / shape properties -->
-        <img id="stars" src="stars.png">
-        <img id="groundTexture" src="homeworld-surface.png">
-        
-        <a-mixin id="title"
-                 position="0 2.5 0" 
-                 scale="1.5 1.5 1.5"></a-mixin>
-        <a-mixin id="members"
-                 position="0 2.1 0"></a-mixin>
-      </a-assets>
-      
-            
-      <!-- The world -->
-      <a-entity light="type: ambient; intensity: 0.5"></a-entity>
-      <a-sky src="#stars"></a-sky>
-      <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"></a-plane>
-      
-      <!-- The Glass Bead -->
-      <!-- Note: color of material and color of light are completely independent -->
-      <a-sphere position="0 3 0"
-                geometry="primitive: sphere; radius: 1.5"
-                material="transparent: true; opacity: 0.1; color: #FFF; metalness: .2"
-                light="color: #fff; distance: 120; intensity: 0.0; type: point"></a-sphere>
-
-      <!-- The camera is right in front of TheWoods -->
-      <a-entity position="0 0 -5">
-        <a-camera></a-camera>
-      </a-entity>
-      
-      <!-- The Woods -->
-      <!-- can provide an attribute:  rotation="45 45 -45" -->
-      <a-entity position="0 0 -10">
-        <a-tetrahedron mixin="house" rotation="35 -46 -46" radius="1.25" position="0 0.7 0" color="mediumseagreen" shadow></a-tetrahedron>
-        <!-- NOTE for some reason, align doesn't work in a mixin -->
-        <a-text mixin="title" value="TheWoods" align="center"></a-text>
-        <a-text mixin="members" value="Dav Clark, Facilitator" align="center"></a-text>
-        <a-plane rotation="-90 0 0" width="11" height="4" color="#7BC8A4" shadow></a-plane>
-      </a-entity>
-      
-      <!-- Reef Corps -->
-      <a-entity rotation="0 120 0">
-        <a-entity position="0 0 -10">
-          <a-cone position="0 1 0" rotation="10 10 170" height="1.5" geometry="radiusBottom:0.4" color="magenta" material="metalness: .2">
-            <a-animation attribute="position" from="0 .75 0" to="0 1.25 0" dur="10000" repeat="indefinite" direction="alternate"></a-animation>
-          </a-cone>
-          <a-torus mixin="house" rotation="50 -140 -115" position="0 1 0" radius="0.75" color="magenta" arc="360" radiustubular=".1" shadow="" material="" light="" geometry="radiusTubular:0.1"></a-torus>
-          
-          <a-text mixin="title" value="ReefStructure" align="center"></a-text>
-          <a-text mixin="members" value="Sebastian Benthall, Commander" align="center"></a-text>
-        </a-entity>
-      </a-entity>
-        
-      <!-- フルーツ　Paradise - note, A-Frame is racist, so doesn't handle utf-8 by default -->
-      <a-entity rotation="0 -120 0">
-        <a-entity position="0 0 -10">
-          <a-torus-knot mixin="house" position="0 1 0" radius="0.4" height="1.5" color="gold" shadow></a-torus-knot>
-          <a-text mixin="title" value="FruitsParadise" align="center"></a-text>
-          <a-text mixin="members" value="Madoka Wada, Symbol" align="center"></a-text>
-        </a-entity>
-      </a-entity>
-
-      </a-scene>
+    <script>
+        document.body.innerHTML = nunjucks.render('index.njk');
+    </script>
   </body>
 </html>
