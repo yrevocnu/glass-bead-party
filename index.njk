@@ -12,6 +12,14 @@
              scale="1.5 1.5 1.5"></a-mixin>
     <a-mixin id="members"
              position="0 2.1 0"></a-mixin>
+
+    <!-- Texture samples -->
+    <img id="sand" crossorigin="anonymous" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8yk8DfEK3_p00rFA6v0HmoRRBUnofgIJkIe5ABarDJqJF3V3_">
+    <img id="glass" crossorigin="anonymous" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXhbpfWPwlvkCP7xAgq00gumbFRQ6q-eUNH4a9LUrIXs--J7ac">
+    <img id="rust" crossorigin="anonymous" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeeEo19vWWDeLx2o9a0ypIUv4qvpDAWcRa_AAo3UI2-nF_2Nus">
+    <img id="leaves" crossorigin="anonymous" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFECvldc9ayjqk6jZUFhHyLyhNJFXlp9Y7Fb6EuqTjw5BJE5J8KQ">
+    <img id="mix" crossorigin="anonymous" src="https://us.v-cdn.net/5021068/uploads/editor/f0/6kymf4lg6ium.jpg">
+
   </a-assets>
 
 
@@ -50,8 +58,8 @@
   <!-- フルーツ　Paradise - note, A-Frame is racist, so doesn't handle utf-8 by default -->
   <a-entity rotation="0 -120 0">
     <a-entity position="0 0 -10">
-      <a-torus-knot mixin="house" position="0 1 0" radius="0.4" height="1.5" color="gold" shadow>
-      <a-animation attribute="rotation" dur="100"
+      <a-torus-knot mixin="house" position="0 1 0" radius="0.4" height="1.5" color="gold" shadow src="#rust">
+      <a-animation attribute="rotation" dur="500"
          fill="forwards"
          to="180 360 90"
          repeat="indefinite"></a-animation></a-torus-knot>
