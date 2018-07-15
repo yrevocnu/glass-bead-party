@@ -22,6 +22,8 @@
                  light="distance: 120; intensity: 1; type: point"
                  shadow></a-mixin>
         <!-- elements with this mixin still need to specify light color and other geometry / shape properties -->
+        <img id="stars" src="stars.png">
+        <img id="groundTexture" src="homeworld-surface.png">
         
         <a-mixin id="title"
                  position="0 2.5 0" 
@@ -33,8 +35,8 @@
             
       <!-- The world -->
       <a-entity light="type: ambient; intensity: 0.5"></a-entity>
-      <a-sky color="midnightblue"></a-sky>
-
+      <a-sky src="#stars"></a-sky>
+      <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"></a-plane>
       
       <!-- The Glass Bead -->
       <!-- Note: color of material and color of light are completely independent -->
