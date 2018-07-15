@@ -48,9 +48,12 @@
             light="color: #fff; distance: 120; intensity: 0.0; type: point"></a-sphere>
 
   <!-- The camera is right in front of TheWoods -->
-  <a-entity position="0 0 -5" rotation="0 {{([0, 1, 2] | random) * 120}} 0">
-    <a-camera></a-camera>
-  </a-entity>
+  <!-- The camera is right in front of TheWoods -->
+  <a-entity rotation="0 {{([0, 1, 2] | random) * 120}} 0">
+    <a-entity position="0 0 -5">
+      <a-camera></a-camera>
+    </a-entity>
+  </a>
 
   {% include "the-woods.njk.html" %}
 
