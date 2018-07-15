@@ -15,6 +15,7 @@
   <body>
     <a-scene id="a-frame-container" inspector>
       <a-assets>
+        <img id="stars" src="stars.png">
         <!-- question: can we programmatically update a mixin and trigger updates on the compoenents that use it? -->
         <a-mixin id="house"
                  material="transparent: true; opacity: 0.9;"
@@ -32,7 +33,7 @@
             
       <!-- The world -->
       <a-entity light="type: ambient; intensity: 0.5"></a-entity>
-      <a-sky color="midnightblue"></a-sky>
+      <a-sky src="#stars"></a-sky>
 
       <!-- The camera is right in front of TheWoods -->
       <a-entity position="0 0 -5">
@@ -40,7 +41,41 @@
       </a-entity>
 
       <a-entity position="0 0 -10">
-        <a-plane rotation="0 0 0" width="11" height="6" color="#505050" shadow></a-plane>
+        <a-plane position="0 4 0" side="double" rotation="0 0 0" width="1" height="1" shadow>
+          <a-animation attribute="color"
+                       direction="alternate-reverse"
+                       dur="1000"
+                       from="#FF0000"
+                       to="#0000FF"
+                       repeat="indefinite"></a-animation>
+        </a-plane>
+
+        <a-plane position="0 5 0" side="double" rotation="0 0 0" width="1" height="1" shadow>
+          <a-animation attribute="color"
+                       direction="alternate-reverse"
+                       dur="10000"
+                       from="#FF0000"
+                       to="#0000FF"
+                       repeat="indefinite"></a-animation>
+        </a-plane>
+
+        <a-plane position="1 4 0" side="double" rotation="0 0 0" width="1" height="1" shadow>
+          <a-animation attribute="color"
+                       direction="alternate-reverse"
+                       dur="5000"
+                       from="#FF0000"
+                       to="#0000FF"
+                       repeat="indefinite"></a-animation>
+        </a-plane>
+
+        <a-plane position="1 5 0" side="double" rotation="0 0 0" width="1" height="1" shadow>
+          <a-animation attribute="color"
+                       direction="alternate-reverse"
+                       dur="2500"
+                       from="#FF0000"
+                       to="#0000FF"
+                       repeat="indefinite"></a-animation>
+        </a-plane>
       </a-entity>
       
       <a-entity position="0 0 -10">
