@@ -1,0 +1,20 @@
+  <!-- Reef Corps -->
+  <a-entity rotation="0 120 0">
+    <a-entity position="0 0 -10">
+      <a-cone position="0 1 0" rotation="10 10 170" height="1.5" geometry="radiusBottom:0.4" color="magenta" material="metalness: .2">
+        <a-animation attribute="position" from="0 .75 0" to="0 1.25 0" dur="10000" repeat="indefinite" direction="alternate"></a-animation>
+      </a-cone>
+      <a-torus mixin="house" rotation="50 -140 -115" position="0 1 0" radius="0.75" src="#coral" arc="360" radiustubular=".1" shadow="" material="" light="" geometry="radiusTubular:0.1"></a-torus>
+
+      <a-text mixin="title" value="ReefStructure" align="center"></a-text>
+      <a-text mixin="members" value="Sebastian Benthall, Commander" align="center"></a-text>
+
+      <!--
+      <a-entity mixin="score"
+                text="value: 3,000; wrapCount: 5; color: magenta" ></a-entity>
+      -->
+      
+     {% include "brillish.njk.html" %}
+    </a-entity>
+  </a-entity>
+
