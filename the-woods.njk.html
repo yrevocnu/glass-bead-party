@@ -1,0 +1,45 @@
+{% macro anim() %}
+<a-animation attribute="rotation"
+     dur="10000"
+     fill="forwards"
+     to="109.471 0 0"></a-animation> 
+{% endmacro %}
+
+<!-- We're gonna make a lot of triangles -->
+{% macro tri(side='front') %}
+<a-triangle position="0 0 .5"
+            material="src: #branches; side: {{ side }}"
+            vertex-a="0 1.5 -.5"
+            vertex-b="-.866 0 0"
+            vertex-c=".866 0 0"
+            shadow>
+    {{ anim() }}
+</a-triangle>
+{% endmacro %}
+
+<!-- can provide an attribute:  rotation="45 45 -45" -->
+<a-entity position="0 0 -10">
+  <!--a-tetrahedron mixin="house" rotation="35 -46 -46" radius="1.25"
+      position="0 0.7 0" color="mediumseagreen" shadow></a-tetrahedron-->
+  <a-entity position="0 .5 0" rotation="0 -45 0">
+      <!-- Approximately front -->
+      <a-entity>
+        {{ tri() }} 
+        {{ tri('back') }}
+      </a-entity>
+      <!-- Approximate back / right -->
+      <a-entity rotation="0 120 0">
+        {{ tri() }} 
+        {{ tri('back') }}
+      </a-entity>
+      <!-- Approximate back / left -->
+      <a-entity rotation="0 -120 0">
+        {{ tri() }} 
+        {{ tri('back') }}
+      </a-entity>
+  </a-entity>
+  <!-- NOTE for some reason, align doesn't work in a mixin -->
+  <a-text mixin="title" value="TheWoods" align="center"></a-text>
+  <a-text mixin="members" value="Amanda Perez / Dav Clark / Michael Pope" align="center"></a-text>
+  <a-plane rotation="-90 0 0" position="0 .01 0" width="11" height="4" color="#7BC8A4" shadow></a-plane>
+</a-entity>
