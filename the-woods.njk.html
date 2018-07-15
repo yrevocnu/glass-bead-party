@@ -1,3 +1,5 @@
+{% set woods_color = "#7BC8A4" %}
+
 {% macro anim() %}
 <a-animation attribute="rotation"
      dur="10000"
@@ -40,6 +42,12 @@
   </a-entity>
   <!-- NOTE for some reason, align doesn't work in a mixin -->
   <a-text mixin="title" value="TheWoods" align="center"></a-text>
-  <a-text mixin="members" value="Amanda Perez / Dav Clark / Michael Pope" align="center"></a-text>
-  <a-plane rotation="-90 0 0" position="0 .01 0" width="11" height="4" color="#7BC8A4" shadow></a-plane>
+  <a-text mixin="members" value="Amanda Perez / Dav Clark / Michael Pope" align="center">
+  </a-text>
+  <a-entity position="0 1.5 0" 
+      light="type: point; castShadow: true; intensity: 0.4; color: {{ woods_color }}">
+  </a-entity>
+  <a-plane rotation="-90 0 0" position="0 .01 0"
+                              width="11" height="4"
+                              color="{{ woods_color }}" shadow></a-plane>
 </a-entity>
