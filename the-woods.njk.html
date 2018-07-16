@@ -44,7 +44,7 @@
   <a-text mixin="title" value="TheWoods" align="center"></a-text>
   <a-text mixin="members" value="Amanda Perez / Dav Clark / Michael Pope" align="center">
   </a-text>
-  <a-entity position="0 1.5 0" 
+  <a-entity position="0 1.5 0"
       light="type: point; castShadow: true; intensity: 0.4; color: {{ woods_color }}">
   </a-entity>
   <a-plane rotation="-90 0 0" position="0 .01 0"
@@ -52,7 +52,7 @@
                               color="{{ woods_color }}" shadow></a-plane>
 </a-entity>
 
-<a-entity obj-model="obj: #seahorse" position="0 1 -10" scale=".0015 .0015 .0015" >
+<a-entity obj-model="obj: #seahorse" position="0 1 -10" scale=".15 .15 .15" material="src: #gold" >
   <a-animation attribute="rotation" dur="4000"
      fill="forwards"
      to="0 360 0"
