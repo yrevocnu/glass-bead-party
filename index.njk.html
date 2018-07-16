@@ -32,10 +32,10 @@
     <img id="branches" src="branches_green.jpg">
     <img id="mix" crossorigin="anonymous" src="https://us.v-cdn.net/5021068/uploads/editor/f0/6kymf4lg6ium.jpg">
     <img id="coral" src="coral.png">
+    <img id="gold" src="gold.jpg">
+
 
   </a-assets>
-
-
 
   <!-- The world -->
   <a-entity light="type: ambient; intensity: 0.5"></a-entity>
@@ -54,22 +54,17 @@
   <!-- The camera is right in front of TheWoods -->
   <a-entity rotation="0 {{([0, 1, 2] | random) * 120}} 0">
     <a-entity position="0 0 -5">
-      <a-camera></a-camera>
+      <a-camera>
+        <a-entity laser-controls="hand: right"></a-entity>
+      </a-camera>
     </a-entity>
   </a>
 
   {% include "the-woods.njk.html" %}
 
   <!-- Reef Corps -->
-  <a-entity rotation="0 120 0">
-    <a-entity position="0 0 -10">
-      <a-cone position="0 1 0" rotation="10 10 170" height="1.5" geometry="radiusBottom:0.4" color="magenta" material="metalness: .2">
-        <a-animation attribute="position" from="0 .75 0" to="0 1.25 0" dur="10000" repeat="indefinite" direction="alternate"></a-animation>
-      </a-cone>
-      <a-torus mixin="house" rotation="50 -140 -115" position="0 1 0" radius="0.75" src="#coral" arc="360" radiustubular=".1" shadow="" material="" light="" geometry="radiusTubular:0.1"></a-torus>
 
-      <a-text mixin="title" value="ReefStructure" align="center"></a-text>
-      <a-text mixin="members" value="Sebastian the Crab, Conductor" align="center"></a-text>
+  {% include "reef-structure.njk.html" %}
 
       <a-entity mixin="score"
                 text="value: 3,000; wrapCount: 5; color: magenta" ></a-entity>
@@ -85,4 +80,5 @@
 </a-entity>
   
 {% include "fruit-paradise.njk.html" %}
+
   </a-scene>
