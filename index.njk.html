@@ -54,9 +54,9 @@
   <!-- The camera is right in front of TheWoods -->
   <a-entity rotation="0 {{([0, 1, 2] | random) * 120}} 0">
     <a-entity position="0 0 -5">
-      <a-camera>
-        <a-entity laser-controls="hand: right"></a-entity>
-      </a-camera>
+      <a-camera></a-camera>
+      <a-entity laser-controls="hand: right"></a-entity>
+      <!-- a-entity super-hands hand-controls="right"></a-entity -->
     </a-entity>
   </a>
 
