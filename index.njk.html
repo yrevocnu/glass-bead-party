@@ -64,12 +64,9 @@
   {% include "reef-structure.njk.html" %}
   {% include "fruit-paradise.njk.html" %}
 
-      <!-- this is broke? -->
-      <a-entity mixin="score"
-                text="value: 3,000; wrapCount: 5; color: magenta" ></a-entity>
 
-<a-entity gltf-model="#passion_ball" position="0 5 0" scale=".03 .03 .03">
-  <a-animation attribute="rotation" dur="4000"
+<a-entity gltf-model="#passion_ball" position="0 5 0" scale=".02 .02 .02">
+  <a-animation attribute="position" dur="40000"
          fill="forwards"
          to="0 180 0"
          repeat="indefinite"></a-animation>
