@@ -2,7 +2,6 @@
 
 {% macro anim() %}
 <a-animation attribute="rotation"
-     begin="click"
      dur="10000"
      fill="forwards"
      to="109.471 0 0"></a-animation>
@@ -22,6 +21,8 @@
 
 <!-- can provide an attribute:  rotation="45 45 -45" -->
 <a-entity position="0 0 -10">
+  <!--a-tetrahedron mixin="house" rotation="35 -46 -46" radius="1.25"
+      position="0 0.7 0" color="mediumseagreen" shadow></a-tetrahedron-->
   <a-entity position="0 .5 0" rotation="0 -45 0">
       <!-- Approximately front -->
       <a-entity>
@@ -51,9 +52,13 @@
                               color="{{ woods_color }}" shadow></a-plane>
 </a-entity>
 
-<a-entity obj-model="obj: #seahorse" position="0 1 -10" scale=".0015 .0015 .0015" material="color: magenta" >
-  <a-animation attribute="rotation" dur="4000"
-     fill="forwards"
-     to="0 360 0"
-     repeat="indefinite"></a-animation>
+
+
+<a-entity obj-model="obj: #seahorse" position="0 1 -10" scale=".0015 .0015 .0015" material="color: magenta; metalness: .8" >
+    <a-animation attribute="rotation" dur="4000"
+       fill="forwards"
+       to="0 360 0"
+       repeat="indefinite"></a-animation>
+      <a-animation attribute="position" from="0 1 -10" to="-9 1.2 5.3" dur="30000"></a-animation>
+      <a-animation delay="25000" attribute="scale" from=".0015 .0015 .0015" to="0 0 0" dur="2000"></a-animation>
 </a-entity>
