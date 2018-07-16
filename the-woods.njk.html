@@ -2,6 +2,7 @@
 
 {% macro anim() %}
 <a-animation attribute="rotation"
+     start="click"
      dur="10000"
      fill="forwards"
      to="109.471 0 0"></a-animation>
@@ -21,8 +22,6 @@
 
 <!-- can provide an attribute:  rotation="45 45 -45" -->
 <a-entity position="0 0 -10">
-  <!--a-tetrahedron mixin="house" rotation="35 -46 -46" radius="1.25"
-      position="0 0.7 0" color="mediumseagreen" shadow></a-tetrahedron-->
   <a-entity position="0 .5 0" rotation="0 -45 0">
       <!-- Approximately front -->
       <a-entity>
