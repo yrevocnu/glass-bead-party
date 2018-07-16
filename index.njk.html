@@ -1,6 +1,8 @@
 <a-scene id="a-frame-container" inspector>
   <a-assets timeout="3000">
     <a-asset-item id="passion_ball" src="scene.gltf"></a-asset-item>
+    <a-asset-item id="seahorse" src="seahorse.obj"></a-asset-item>
+
 
     <!-- question: can we programmatically update a mixin and trigger updates on the compoenents that use it? -->
     <a-mixin id="house"
@@ -34,12 +36,13 @@
   </a-assets>
 
 
+
   <!-- The world -->
   <a-entity light="type: ambient; intensity: 0.5"></a-entity>
   <a-sky src="#stars"></a-sky>
   <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"></a-plane>
 
-  
+
   <!-- The Glass Bead -->
   <!-- Note: color of material and color of light are completely independent -->
   <a-sphere position="0 3 0"
@@ -70,7 +73,7 @@
 
       <a-entity mixin="score"
                 text="value: 3,000; wrapCount: 5; color: magenta" ></a-entity>
-      
+
       {% include "brillish.njk" %}
     </a-entity>
   </a-entity>
