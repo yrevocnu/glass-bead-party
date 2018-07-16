@@ -61,18 +61,13 @@
   </a>
 
   {% include "the-woods.njk.html" %}
-
-  <!-- Reef Corps -->
-
   {% include "reef-structure.njk.html" %}
+  {% include "fruit-paradise.njk.html" %}
 
       <!-- this is broke? -->
-      <!-- a-entity mixin="score"
-                text="value: 3,000; wrapCount: 5; color: magenta" ></a-entity-->
+      <a-entity mixin="score"
+                text="value: 3,000; wrapCount: 5; color: magenta" ></a-entity>
 
-      {% include "brillish.njk" %}
-    </a-entity>
-  </a-entity>
 <a-entity gltf-model="#passion_ball" position="0 5 0" scale=".03 .03 .03">
   <a-animation attribute="rotation" dur="4000"
          fill="forwards"
@@ -80,6 +75,5 @@
          repeat="indefinite"></a-animation>
 </a-entity>
   
-{% include "fruit-paradise.njk.html" %}
 
   </a-scene>
