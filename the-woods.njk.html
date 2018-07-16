@@ -1,8 +1,10 @@
+{% set woods_color = "#7BC8A4" %}
+
 {% macro anim() %}
 <a-animation attribute="rotation"
      dur="10000"
      fill="forwards"
-     to="109.471 0 0"></a-animation> 
+     to="109.471 0 0"></a-animation>
 {% endmacro %}
 
 <!-- We're gonna make a lot of triangles -->
@@ -24,22 +26,35 @@
   <a-entity position="0 .5 0" rotation="0 -45 0">
       <!-- Approximately front -->
       <a-entity>
-        {{ tri() }} 
+        {{ tri() }}
         {{ tri('back') }}
       </a-entity>
       <!-- Approximate back / right -->
       <a-entity rotation="0 120 0">
-        {{ tri() }} 
+        {{ tri() }}
         {{ tri('back') }}
       </a-entity>
       <!-- Approximate back / left -->
       <a-entity rotation="0 -120 0">
-        {{ tri() }} 
+        {{ tri() }}
         {{ tri('back') }}
       </a-entity>
   </a-entity>
   <!-- NOTE for some reason, align doesn't work in a mixin -->
   <a-text mixin="title" value="TheWoods" align="center"></a-text>
-  <a-text mixin="members" value="Amanda Perez / Dav Clark / Michael Pope" align="center"></a-text>
-  <a-plane rotation="-90 0 0" position="0 .01 0" width="11" height="4" color="#7BC8A4" shadow></a-plane>
+  <a-text mixin="members" value="Amanda Perez / Dav Clark / Michael Pope" align="center">
+  </a-text>
+  <a-entity position="0 1.5 0"
+      light="type: point; castShadow: true; intensity: 0.4; color: {{ woods_color }}">
+  </a-entity>
+  <a-plane rotation="-90 0 0" position="0 .01 0"
+                              width="11" height="4"
+                              color="{{ woods_color }}" shadow></a-plane>
+</a-entity>
+
+<a-entity obj-model="obj: #seahorse" position="0 1 -10" scale=".0015 .0015 .0015" material="src: #gold" >
+  <a-animation attribute="rotation" dur="4000"
+     fill="forwards"
+     to="0 360 0"
+     repeat="indefinite"></a-animation>
 </a-entity>
