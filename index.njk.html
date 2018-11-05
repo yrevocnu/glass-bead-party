@@ -26,6 +26,8 @@
              width="15"
              align="center">
 
+
+<!- tets ->
     <!-- Texture samples -->
     <img id="sand" crossorigin="anonymous" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8yk8DfEK3_p00rFA6v0HmoRRBUnofgIJkIe5ABarDJqJF3V3_">
     <img id="glass" crossorigin="anonymous" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXhbpfWPwlvkCP7xAgq00gumbFRQ6q-eUNH4a9LUrIXs--J7ac">
@@ -44,12 +46,23 @@
   <a-sky src="#stars"></a-sky>
   <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"></a-plane>
 
+<a-entity>
+    <a-text value="Knowledge is infinite" position="0 1 0" color=red></a-text>
+    <a-animation attribute="rotation" dur="4000"
+       fill="forwards"
+       to="0 360 0"
+       repeat="indefinite"></a-animation>
+      <a-animation attribute="position" begin=3000 from="0 1 -10" to="0 1.2 10" dur="30000" repeat="indefinite"></a-animation>
+</a-entity>
+  
+  
+
 
   <!-- The Glass Bead -->
   <!-- Note: color of material and color of light are completely independent -->
   <a-sphere position="0 3 0"
             geometry="primitive: sphere; radius: 1.5"
-            material="transparent: true; opacity: 0.25; color: #FFF; metalness: .5"
+            material="transparent: true; opacity: 0.75; color: #FFF; metalness: .5"
             light="color: #fff; distance: 120; intensity: 0.0; type: point"></a-sphere>
 
   <!-- The camera is right in front of TheWoods -->
