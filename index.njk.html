@@ -5,7 +5,6 @@
     <a-asset-item id="skullbottom" src="skull-bottom.obj"></a-asset-item>
     <a-asset-item id="skulltop" src="skull-top.obj"></a-asset-item>
 
-
     <!-- question: can we programmatically update a mixin and trigger updates on the compoenents that use it? -->
     <a-mixin id="house"
              material="transparent: true; opacity: 0.9;"
@@ -26,8 +25,6 @@
              width="15"
              align="center">
 
-
-<!- tets ->
     <!-- Texture samples -->
     <img id="sand" crossorigin="anonymous" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8yk8DfEK3_p00rFA6v0HmoRRBUnofgIJkIe5ABarDJqJF3V3_">
     <img id="glass" crossorigin="anonymous" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXhbpfWPwlvkCP7xAgq00gumbFRQ6q-eUNH4a9LUrIXs--J7ac">
@@ -36,26 +33,21 @@
     <img id="branches" src="branches_green.jpg">
     <img id="mix" crossorigin="anonymous" src="https://us.v-cdn.net/5021068/uploads/editor/f0/6kymf4lg6ium.jpg">
     <img id="coral" src="coral.png">
-    <img id="gold" src="gold.jpg">
-
-
   </a-assets>
 
   <!-- The world -->
   <a-entity light="type: ambient; intensity: 0.5"></a-entity>
   <a-sky src="#stars"></a-sky>
-  <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"></a-plane>
+  <a-box static-body src="#groundTexture" position="0 -1 0" rotation="-90 0 0" width="30" height="30" depth="1"></a-box>
 
-<a-entity>
+  <a-entity>
     <a-text value="Knowledge is infinite" position="0 1 0" color=red></a-text>
     <a-animation attribute="rotation" dur="4000"
        fill="forwards"
        to="0 360 0"
        repeat="indefinite"></a-animation>
-      <a-animation attribute="position" begin=3000 from="0 1 -10" to="0 1.2 10" dur="30000" repeat="indefinite"></a-animation>
-</a-entity>
-
-
+    <a-animation attribute="position" begin=3000 from="0 1 -10" to="0 1.2 10" dur="30000" repeat="indefinite"></a-animation>
+  </a-entity>
 
   <!-- The Glass Bead -->
   <!-- Note: color of material and color of light are completely independent -->
@@ -64,29 +56,23 @@
             material="transparent: true; opacity: 0.75; color: #FFF; metalness: .5"
             light="color: #fff; distance: 120; intensity: 0.0; type: point"></a-sphere>
 
-  <!-- The camera is right in front of TheWoods -->
-  <!-- The camera is right in front of TheWoods -->
-  <a-entity rotation="0 {{([0, 1, 2] | random) * 120}} 0">
-    <a-entity position="0 0 -5">
-      <a-camera></a-camera>
-      <a-entity laser-controls="hand: right" position="0 0 -1"></a-entity>
-      <!-- a-entity super-hands hand-controls="right"></a-entity -->
-    </a-entity>
-  </a>
+  <!-- Player -->
+  <a-entity movement-controls kinematic-body rotation="0 {{([0, 1, 2] | random) * 120}} 0" jump-ability="maxJumps: 1; distance: 5;">
+    <a-entity id="camera" camera position="0 2.5 0" look-controls="pointerLockEnabled: true"></a-entity>
+    <a-entity laser-controls="hand: right" position="0 0 -1"></a-entity>
+  </a-entity>
 
   {% include "the-woods.njk.html" %}
   {% include "reef-structure.njk.html" %}
   {% include "fruit-paradise.njk.html" %}
 
+  <a-entity gltf-model="#passion_ball" position="0 5 0" scale=".02 .02 .02">
+    <a-animation attribute="position" dur="40000"
+           fill="forwards"
+           to="0 180 0"
+           repeat="indefinite"></a-animation>
+  </a-entity>
 
-<a-entity gltf-model="#passion_ball" position="0 5 0" scale=".02 .02 .02">
-  <a-animation attribute="position" dur="40000"
-         fill="forwards"
-         to="0 180 0"
-         repeat="indefinite"></a-animation>
-</a-entity>
-
-  <a-plane src="#groundTexture" position="0 -75 0" rotation="-90 0 0" width="175" height="175"></a-plane>
-
-
-  </a-scene>
+  <!-- The Innerverse -->
+  <a-box static-body src="#groundTexture" position="0 -75 0" rotation="-90 0 0" width="175" height="175" depth="10"></a-box>
+</a-scene>

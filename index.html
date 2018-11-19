@@ -10,12 +10,16 @@
     <!-- script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script -->
     <!-- script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script -->
     <script src="https://unpkg.com/nunjucks@3.1.3/browser/nunjucks.js"></script>
+
+    <!-- now we fall -->
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.3.0/dist/aframe-physics-system.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script>
     <script>
       AFRAME.registerState({
         initialState: {
           points: {FruitsParadise: 13, TheWoods: 0, ReefStructure: 0}
         },
- 
+
         handlers: {
           pointUpdate: function (state, action) {
             // Not sure if we are able to just update attributes...
@@ -23,13 +27,7 @@
           }
         },
       });
-    </script> 
-    <!-- style>
-      #a-frame-container {
-        height: 750px;
-        width: 1200px;
-      }
-    </style -->
+    </script>
   </head>
   <body>
     <script>
