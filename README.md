@@ -1,6 +1,6 @@
-# Glass Bead Labs Planning Party World
+# Orbis Develandus
 
-A metaverse for the three "houses" at the Glass Bead Planning Party. Built with
+A metaverse for the three "houses" of Yrevocnu. Built with
 [A-Frame](https://aframe.io), a web framework for building virtual reality
 experiences. Make WebVR with HTML and Entity-Component. Works on Vive, Rift,
 desktop, mobile platforms.
