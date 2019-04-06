@@ -79,12 +79,13 @@
 
   <!-- The Innerverse -->
   <a-entity>
-    <a-image src="#moth-maid" position="0 -55 0" height=10 width=10></a-text>
+    <a-image src="#moth-maid" position="0 -15 0" height=10 width=10></a-image>
+    <a-image src="#moth-maid" position="0 -15 0" rotation="0 90 0" height=10 width=10></a-image>
     <a-animation attribute="rotation" dur="4000"
                  fill="forwards"
                  to="0 360 0"
                  repeat="indefinite"></a-animation>
-    <a-animation attribute="position" begin=3000 from="0 -55 -10" to="0 -55 10" dur="30000" repeat="indefinite"></a-animation>
+    <a-animation attribute="position" begin=3000 from="10 -15 -10" to="-10 -45 10" dur="30000" repeat="indefinite"></a-animation>
   </a-entity>
   
   <a-box static-body material="src: #innerverseGround; repeat: 15 15" position="0 -75 0" rotation="-90 0 0" width="175" height="175" depth="10"></a-box>
