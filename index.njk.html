@@ -13,7 +13,8 @@
     <!-- elements with this mixin still need to specify light color and other geometry / shape properties -->
     <img id="stars" src="stars.png">
     <img id="groundTexture" src="homeworld-surface.png">
-
+    <img id="innerverseGround" src="innerverse-surface.png">
+         
     <a-mixin id="title"
              position="0 2.5 0"
              scale="1.5 1.5 1.5"></a-mixin>
@@ -86,5 +87,5 @@
     <a-animation attribute="position" begin=3000 from="0 -55 -10" to="0 -55 10" dur="30000" repeat="indefinite"></a-animation>
   </a-entity>
   
-  <a-box static-body src="#groundTexture" position="0 -75 0" rotation="-90 0 0" width="175" height="175" depth="10"></a-box>
+  <a-box static-body material="src: #innerverseGround; repeat: 15 15" position="0 -75 0" rotation="-90 0 0" width="175" height="175" depth="10"></a-box>
 </a-scene>
