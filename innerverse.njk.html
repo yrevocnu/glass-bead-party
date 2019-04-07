@@ -1,0 +1,30 @@
+  <!-- The Innerverse -->
+  <a-cylinder material="src: #innerverseGround; repeat: 15 15" position="0 -75 0" rotation="0 0 0" radius="90" height="10" static-body></a-cylinder>
+
+  <!-- Fauna -->
+  <a-entity position="0 -20 0" >
+    <a-image src="#moth-maid" height="10" width="10"></a-image>
+    <a-image src="#moth-maid"
+             rotation="0 90 0"
+             height="10"
+             width="10"
+             light="color: #0ff; distance: 15; intensity: 1.0; type: point"></a-image>
+    <a-animation attribute="rotation" dur="4000"
+                 fill="forwards"
+                 to="0 360 0"
+   w              repeat="indefinite"></a-animation>
+    <a-animation attribute="position" begin=3000 from="10 -15 -10" to="-10 -45 10" dur="30000" repeat="indefinite"></a-animation>
+  </a-entity>
+  
+  <!-- The Grey House -->
+  
+  <a-entity obj-model="obj: #grey_house" position="0 -70 0" scale="4 4 4">
+  </a-entity>
+
+  <!--
+  <a-entity obj-model="obj: #blackroom" position="0 -65 0" scale="4 4 4">
+  </a-entity>
+  -->
+
+  <a-cylinder color="black" height="12" radius="4" position="0 -65 0" dynamic-body/>
+
