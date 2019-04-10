@@ -1,6 +1,6 @@
   <!-- The Innerverse -->
-  <a-cylinder material="src: #innerverseGround; repeat: 15 15" position="0 -75 0" rotation="0 0 0" radius="90" height="10" static-body></a-cylinder>
-
+  
+  
   <!-- Fauna -->
   <a-entity position="0 -20 0" >
     <a-image src="#moth-maid" height="10" width="10"></a-image>
@@ -18,13 +18,15 @@
   
   <!-- The Grey House -->
   
-  <a-entity obj-model="obj: #grey_house" position="0 -70 0" scale="4 4 4">
+  <a-entity obj-model="obj: #grey_house" position="0 -65 0" scale="4 4 4">
   </a-entity>
 
-  <!--
-  <a-entity obj-model="obj: #blackroom" position="0 -65 0" scale="4 4 4">
+  <a-entity position="0 -69 -40">
+    {% for x in range(3) %}
+    <a-cylinder color="black"
+                height="12"
+                radius="3.5"
+                position="{{(x - 1) * 10}} 0 0"
+                dynamic-body/>
+    {% endfor %}
   </a-entity>
-  -->
-
-  <a-cylinder color="black" height="12" radius="4" position="0 -65 0" dynamic-body/>
-
